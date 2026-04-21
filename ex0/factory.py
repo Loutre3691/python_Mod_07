@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from .creature import Flameling, Pyrodon, Aquabub, Torragon, Creature
+from .creature import Flameling, Pyrodon, Carapute, Tortank, Creature
 
 
 class CreatureFactory(ABC):
@@ -32,7 +32,7 @@ class AquaFactory(CreatureFactory):
         pass
 
     def create_base(self) -> Creature:
-        return Aquabub("Aquabub", "\033[1;36mWater 🌊\033[0m")
+        return Carapute("Carapute", "\033[1;36mWater 🌊\033[0m")
 
     def create_evolved(self) -> Creature:
-        return Torragon("Torragon", "\033[1;36mWater 🌊\033[0m")
+        return Tortank("Tortank", "\033[1;36mWater 🌊\033[0m")

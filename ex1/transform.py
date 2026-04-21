@@ -1,9 +1,11 @@
+from ex0.creature import Creature
 from abc import ABC, abstractmethod
+from typing import Any
 
 
 class TransformCapability(ABC):
-    def __init__(self) -> None:
-        pass
+    def __init__(self, result: bool) -> None:
+        self.result = result
 
     @abstractmethod
     def transform(self) -> str:
@@ -14,23 +16,42 @@ class TransformCapability(ABC):
         pass
 
 
-class Shiftling(TransformCapability):
-    def __init__(self) -> None:
-        super().__init__()
+class Shiftling(Creature, TransformCapability):
+    def __init__(self,  name: str, creature_type: str) -> None:
+        Creature.__init__(self, name, creature_type)
+        TransformCapability.__init__(self, False)
 
     def transform(self) -> str:
-        return "Shiftling shifts into a sharper form!"
+        self.result = True
+        return f"{self.name} shifts into a sharper form!"
 
     def revert(self) -> str:
-        return "Shiftling returns to normal"
+        self.result = False
+        return f"{self.name} returns to normal"
+
+    def attack(self) -> str:
+        if self.result is False:
+            return f"{self.name} attacks normally"
+        else:
+            return f"{self.name} performs a boosted 🚀 strike!"
 
 
-class Morphagon(TransformCapability):
-    def __init__(self) -> None:
-        super().__init__()
+class Morphagon(Creature, TransformCapability):
+    def __init__(self,  name: str, creature_type: str) -> None:
+        Creature.__init__(self, name, creature_type)
+        TransformCapability.__init__(self, False)
+
 
     def transform(self) -> str:
-        return "Morphagon morphs into a dragonic battle form!"
+        self.result = True
+        return f"{self.name} morphs into a dragonic battle form! 🗡️"
 
     def revert(self) -> str:
-        return "Morphagon stabilizes its form"
+        self.result = False
+        return f"{self.name} stabilizes its form"
+
+    def attack(self) -> str:
+        if self.result is False:
+            return f"{self.name} attacks normally"
+        else:
+            return f"{self.name} unleashes a devastating morph strike!"
