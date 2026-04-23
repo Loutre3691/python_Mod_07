@@ -28,7 +28,7 @@ class NormalStrategy(BattleStrategy):
 
 # normal, adapte a toute creature, juste methode attack
 
-class AgressiveStrategy(BattleStrategy):
+class AggressiveStrategy(BattleStrategy):
     def __init__(self) -> None:
         pass
 
@@ -39,7 +39,7 @@ class AgressiveStrategy(BattleStrategy):
     #     return True
 # agressiv, creature transformable, se transforme attack et reprend leur forme initial
 
-class DefensivStrategy(BattleStrategy):
+class DefensiveStrategy(BattleStrategy):
     def __init__(self) -> None:
         pass
 

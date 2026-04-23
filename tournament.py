@@ -2,14 +2,14 @@ from ex2.strategy import BattleStrategy, NormalStrategy, DefensiveStrategy, Aggr
 from ex0.factory import FlameFactory, AquaFactory
 from ex1.factory1 import HealingCreatureFactory
 
-def battle(tournament: tupple(factory, strategy)) -> None:
+def battle(tournament: list[tuple[objet, BattleFactory]]) -> None:
     print(tournament)
     print("\n\033[1;37m *** Tournament *** \033[0m\n")
     print(f"{len(tournament)} opponents involved")
 
     print("\n\033[1;37m* Battle *\033[0m\n")
-    if factory == FlameFactory():
-        print(FlameFactory.create_base())
+    
+        print(factory.create_base())
     
 
 
