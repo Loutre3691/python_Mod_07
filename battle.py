@@ -1,7 +1,7 @@
 from ex0 import FlameFactory, AquaFactory
 
 
-def test_factory(factory):
+def test_factory(factory: class) -> None:
     base = factory.create_base()
     print(base.describe())
     print(base.attack())
@@ -10,7 +10,7 @@ def test_factory(factory):
     print(evolved.attack())
 
 
-def test_battle(factory1, factory2):
+def test_battle(factory1: class, factory2: class) -> None:
     base1 = factory1.create_base()
     base2 = factory2.create_base()
     print(f"{base1.describe()}\n  vs. \n{base2.describe()} \n  fight!")
