@@ -1,9 +1,11 @@
 from abc import ABC, abstractmethod
 
+
 class BattleStrategy(ABC):
-    def __init__(self) -> None:
+    @abstractmethod
+    def __str__(self) -> str:
         pass
-    
+
     @abstractmethod
     def act(self) -> None:
         pass
@@ -17,8 +19,8 @@ class BattleStrategy(ABC):
 
 
 class NormalStrategy(BattleStrategy):
-    def __init__(self) -> None:
-        pass
+    def __str__(self) -> str:
+        return "Normal"
 
     def act(self) -> None:
         pass
@@ -28,9 +30,10 @@ class NormalStrategy(BattleStrategy):
 
 # normal, adapte a toute creature, juste methode attack
 
+
 class AggressiveStrategy(BattleStrategy):
-    def __init__(self) -> None:
-        pass
+    def __str__(self) -> str:
+        return "Aggressive"
 
     def act(self) -> None:
         pass
@@ -39,9 +42,10 @@ class AggressiveStrategy(BattleStrategy):
     #     return True
 # agressiv, creature transformable, se transforme attack et reprend leur forme initial
 
+
 class DefensiveStrategy(BattleStrategy):
-    def __init__(self) -> None:
-        pass
+    def __str__(self) -> str:
+        return "Defensive"
 
     def act(self) -> None:
         pass
