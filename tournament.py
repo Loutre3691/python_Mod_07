@@ -16,18 +16,21 @@ def battle(tournament: list[tuple[Creature, BattleStrategy]]) -> None:
         print(f"({creature.name}+{strategy})", end=" ")
     print("]")
 
-    print("\n\033[1;37m*** Tournament *** \033[0m")
+    print("\033[1;37m*** Tournament *** \033[0m")
     print(f"{len(tournament)} opponents involved")
 
     print("\n\033[1;37m* Battle *\033[0m")
-     
-    for creature, strategy in tournament:
-        type_creature = creature.describe()
-        print(type_creature)
+
+    for i in range(len(tournament)):
+        for j in range(i + 1, len(tournament)):
+            creature = tournament[i]
+            print(describe())
+         
+      
 
 
 if __name__ == "__main__":
-    print("\n\033[1;37mTournament 0 (basic) \033[0m")
+    print("\033[1;37mTournament 0 (basic) \033[0m")
     tournament_0 = [
         (FlameFactory().create_base(), NormalStrategy()),
         (HealingCreatureFactory().create_base(), DefensiveStrategy()),
